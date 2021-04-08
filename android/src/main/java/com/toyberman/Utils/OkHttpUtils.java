@@ -168,7 +168,8 @@ public class OkHttpUtils {
 
             for (int i = 0; i < certs.size(); i++) {
                 String filename = certs.getString(i);
-                InputStream caInput = new BufferedInputStream(OkHttpUtils.class.getClassLoader().getResourceAsStream("assets/" + filename + ".cer"));
+//                 InputStream caInput = new BufferedInputStream(OkHttpUtils.class.getClassLoader().getResourceAsStream("assets/" + filename + ".cer"));
+                InputStream caInput = new BufferedInputStream(OkHttpUtils.class.getClassLoader().getResourceAsStream(filename + ".cer"));
                 Certificate ca;
                 try {
                     ca = cf.generateCertificate(caInput);
